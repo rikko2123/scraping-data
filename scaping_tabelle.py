@@ -18,13 +18,14 @@ def searchTag(t, soup) -> int:
              count += 1
     return count   
 
+
 #prendo i dati che mi servono ciclo per ogni tablella. gli metto un max di iterazioni
 #la tabella vedendo il codice sorgente è trutturata table -> tbody -> th e td
 #quindi ad ogni tabella mi storo in due array  i dati che mi interessano 
 # attraverso.append, che al suo interno avra un for che inserira tutti i th e td nei rispettivi array 
 #le th sono da convertire in str mentre le liste di td che ho generato sono da conertite in tuple per fare in modo
-#che sia hashabili, fatto questo apro il json, a storo i dati al suo interno
-def getTableData(soup):
+#che sia hashabili, fatto questo apro il json, storo i dati al suo interno per poi salvarli in una directory specifica che passo come paramentro
+def getTableData(soup, dir):
     #per ogni tabella che trovo apro un file json che rappresentera i suoi dati
     for table in soup.find_all('table')[:15]:
         #prima di inserire i dati in un json devo prima convertirli in un dizionario
@@ -47,7 +48,7 @@ def getTableData(soup):
         #creo dizionario con accoppiamenti
         diz = dict(zip(ths, tds))
         #salvo i file nella dir specificata
-        os.chdir('/home/rikko/Desktop/stuff-in-python/python_scaping/scraping_tabelle/data')
+        os.chdir(dir)
         try:
             #nomino il json come la tabella che ho preso
             nameTable = table.find('caption').text
@@ -68,9 +69,11 @@ def main():
         #istanzio soup
         soup = BeautifulSoup(page.content, 'html.parser')
         getSourceCode(soup)
-        print(searchTag("table", soup))
 
-        getTableData(soup)
+        print('[+] Dati trovati, inserisci percorso su cui salvarli...\n')
+        dir = input('---> ')
+        
+        getTableData(soup, dir)
 
     except requests.RequestException as e:
         print(f"C'è statpo un errore: {e}")
