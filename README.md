@@ -16,10 +16,3 @@ Script in Python che ho scritto per allenarmi con il web scraping usando Beautif
 
 Salva anche il codice sorgente HTML della pagina in un file `sourcePagCode.html`, utile se si vuole controllare com'è strutturato il documento.
 
----
-
-## 📝 Esempio di output JSON
-
-{
-  "['Award', 'Winner']": ["('Golden Ball', 'Lionel Messi')"]
-}
