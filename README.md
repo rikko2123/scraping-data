@@ -18,10 +18,8 @@ Salva anche il codice sorgente HTML della pagina in un file `sourcePagCode.html`
 
 ---
 
-## Come si usa
+## 📝 Esempio di output JSON
 
-1. Clona il repo:
-
-```bash
-git clone https://github.com/tuo-username/fifa-awards-scraper.git
-cd fifa-awards-scraper
+{
+  "['Award', 'Winner']": ["('Golden Ball', 'Lionel Messi')"]
+}
