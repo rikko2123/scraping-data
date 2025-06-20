@@ -1,24 +1,27 @@
-Scraper di Tabelle da Wikipedia
-Questo progetto è uno scraper Python che estrae e salva i dati tabulari da pagine web, in particolare da una pagina di Wikipedia. Utilizza BeautifulSoup e requests per fare il parsing del contenuto HTML e raccogliere le tabelle, quindi memorizza i dati in file JSON per un uso successivo. È particolarmente utile per l'analisi automatizzata di dati strutturati da pagine web.
+# Scraper Tabelle HTML in JSON da Wikipedia (FIFA World Cup Awards)
 
-Funzionalità
-Estrazione tabelle: Estrae tutte le tabelle dalla pagina Wikipedia specificata.
-Salvataggio in JSON: I dati vengono salvati in file JSON, con le intestazioni delle tabelle come chiavi e i valori associati come tuple.
-Codice sorgente salvato: Salva il codice HTML della pagina per facilitare l’analisi e il debug.
-Conteggio dei tag: Conta i tag di tipo <table> presenti nella pagina, per fornire informazioni utili sulla struttura del documento.
-Tecnologie utilizzate
-Python: Linguaggio di programmazione utilizzato per lo sviluppo.
-BeautifulSoup: Libreria per il parsing HTML e l'estrazione dei dati.
-Requests: Libreria per fare richieste HTTP e recuperare il contenuto delle pagine.
-JSON: Formato di archiviazione dei dati in modo strutturato e leggibile.
-OS: Utilizzato per la gestione dei file e delle directory.
+Script in Python che ho scritto per allenarmi con il web scraping usando BeautifulSoup. L’obiettivo è semplice: prendo tutte le tabelle presenti nella pagina Wikipedia dei premi della Coppa del Mondo FIFA, le analizzo e salvo ogni tabella in un file `.json` ben strutturato.
 
-Come usarlo:
-  Clona il repository:
-  git clone https://github.com/tuo-utente/nome-del-progetto.git
+---
 
-  Installa le dipendenze:
-  pip install beautifulsoup4 requests
-  
-  Esegui lo script:
-  python scraper.py
+## Cosa fa questo script
+
+- Fa una richiesta HTTP alla pagina specificata
+- Estrae tutte le `<table>` dalla pagina (fino a 15)
+- Per ogni tabella:
+  - prende le intestazioni (`<th>`) e i dati (`<td>`)
+  - li struttura in un dizionario
+  - li salva in un file JSON, uno per ogni tabella
+- Chiede all’utente in quale cartella salvare i file
+
+Salva anche il codice sorgente HTML della pagina in un file `sourcePagCode.html`, utile se si vuole controllare com'è strutturato il documento.
+
+---
+
+## Come si usa
+
+1. Clona il repo:
+
+```bash
+git clone https://github.com/tuo-username/fifa-awards-scraper.git
+cd fifa-awards-scraper
