@@ -17,17 +17,19 @@ Script in Python che ho scritto per allenarmi con il web scraping usando Beautif
 Salva anche il codice sorgente HTML della pagina in un file `sourcePagCode.html`, utile se si vuole controllare com'è strutturato il documento.
 
 
-##🧱 Stack Tecnologico
-#👨‍💻 Linguaggio
+## Stack Tecnologico
+
+# Linguaggio
+
 Python 3.6+ – Linguaggio scelto per la sua semplicità nella gestione di stringhe, strutture dati e richieste web.
 
-#🕸 Librerie principali
+# Librerie principali
 requests – Per effettuare richieste HTTP e ottenere il contenuto della pagina web in modo semplice e robusto.
 
 beautifulsoup4 – Per analizzare e navigare l'HTML usando parsing strutturato (con parser html.parser).
 
-#🗂 File system
+# File system
 os – Per navigare e modificare il percorso di salvataggio dei file JSON direttamente dal terminale.
 
-#📄 Output
+# Output
 File .json – Struttura dati standard, leggibile e facilmente riutilizzabile in altri linguaggi o strumenti (es. JavaScript, pandas, ecc.).
